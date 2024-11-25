@@ -1,0 +1,23 @@
+{
+    "name": "AI For Science",
+    "build": {
+        "context": "..",
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers-extra/features/starship:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.tensorboard",
+                "charliermarsh.ruff"
+            ]
+        }
+    },
+    "onCreateCommand": "echo 'eval \"$(starship init bash)\"' >> ~/.bashrc",
+    "postCreateCommand": "bash .devcontainer/install_datasets.sh"
+}
